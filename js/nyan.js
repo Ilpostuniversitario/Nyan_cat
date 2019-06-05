@@ -81,7 +81,6 @@ $(function () {
 
 	var timer = setInterval(function () {
 		nyancat.cycleFrames();
-		musicControls();
 	}, 70);
 
 });
