@@ -51,7 +51,9 @@ var nyanAudio = {
 function playNyan() {
 	// in realtà in pratica riavvia l'audio e rimette il listener
 	console.log('PlayNyan!');
-
+	if (nyanAudio.isPlaying) {
+		return;
+	}
 	nyanAudio.nyan.currentTime = 0;
 	nyanAudio.nyan.addEventListener('ended', function () {
 		this.currentTime = 0;
@@ -75,9 +77,8 @@ function musicControls() {
 
 	var audioOnRadio = document.getElementById('RadioAudioOn');
 	var audioOffRadio = document.getElementById('RadioAudioOff');
-	if (audioOnRadio.checked && !nyanAudio.isPlaying) {
+	if (audioOnRadio.checked) {
 		playNyan();
-		audioOffRadio.checked = false;
 	} else {
 		stopNyan();
 	}
