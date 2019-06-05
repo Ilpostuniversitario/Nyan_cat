@@ -69,6 +69,18 @@ function stopNyan() {
 }
 
 
+function musicControls() {
+
+	var audioOnRadio = document.getElementById('RadioAudioOn');
+	var audioOffRadio = document.getElementById('RadioAudioOff');
+	if (audioOnRadio.checked) {
+		playNyan();
+	} else {
+		stopNyan();
+	}
+	
+}
+
 $(function () {
 	var nyancat = new NyanCat(),
 		sparks = new Sparks();
@@ -78,15 +90,7 @@ $(function () {
 
 	var timer = setInterval(function () {
 		nyancat.cycleFrames();
+		musicControls();
 	}, 70);
-
-
-	var audioOnRadio = document.getElementById('RadioAudioOn');
-	var audioOffRadio = document.getElementById('RadioAudioOff');
-	if (audioOnRadio.checked) {
-		playNyan();
-	} else {
-		stopNyan();
-	}
 
 });
