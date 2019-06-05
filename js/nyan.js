@@ -43,6 +43,17 @@ var Sparks = function () {
 	}
 };
 
+function foreverPlayNyan() {
+	nyan = new Audio('audio/nyan-cat.ogg');
+	nyan.addEventListener('ended', function () {
+		this.currentTime = 0;
+		this.play();
+	}, false);
+	nyan.play();
+}
+
+let oneTimeNyanPlay = 1;
+
 $(function() {
 	var nyancat = new NyanCat(),
 			sparks = new Sparks();
@@ -53,4 +64,10 @@ $(function() {
 	var timer = setInterval(function () {
 		nyancat.cycleFrames();
 	}, 70);
+
+	if (oneTimeNyanPlay == 1) {
+		oneTimeNyanPlay++;
+		foreverPlayNyan();
+	}
+
 });
