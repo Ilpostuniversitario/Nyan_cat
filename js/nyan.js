@@ -45,7 +45,6 @@ var Sparks = function () {
 
 var nyanAudio = {
 	nyan: new Audio('audio/nyan-cat.ogg'),
-	volume: 0.0
 }
 
 function playNyan() {
@@ -57,8 +56,8 @@ function playNyan() {
 		this.currentTime = 0;
 		this.play();
 	}, false);
-	nyan.play();
-	nyan.volume = 0.7;
+	nyanAudio.nyan.play();
+	nyanAudio.nyan.volume = 0.7;
 }
 
 function stopNyan() {
