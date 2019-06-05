@@ -45,7 +45,7 @@ var Sparks = function () {
 
 var nyanAudio = {
 	nyan: new Audio('audio/nyan-cat.ogg'),
-	isPlaying = false	
+	isPlaying: false
 }
 
 function playNyan() {
