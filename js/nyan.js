@@ -68,8 +68,22 @@ function stopNyan() {
 	// Se l'audio era acceso lo lascia tale
 	console.log('stopNyan!');
 	nyanAudio.isPlaying = false;
-
 	nyanAudio.nyan.volume = 0.0;
+}
+
+function audioControlli() {
+	if (document.getElementById('RadioAudioOn').checked) {
+
+		if (!nyanAudio.isPlaying) {
+			playNyan();
+		}
+		return;
+	} else {
+		if (nyanAudio.isPlaying) {
+			stopNyan();
+		}
+	}
+	
 }
 
 $(function () {
@@ -82,5 +96,9 @@ $(function () {
 	var timer = setInterval(function () {
 		nyancat.cycleFrames();
 	}, 70);
+	var timer2 = setInterval(function () {
+		audioControlli();
+	}, 10);
 
 });
+
