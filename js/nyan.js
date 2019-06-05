@@ -57,7 +57,7 @@ function playNyan() {
 		this.play();
 	}, false);
 	nyanAudio.nyan.play();
-	nyanAudio.nyan.volume = 0.7;
+	nyanAudio.nyan.volume = 1.0;
 }
 
 function stopNyan() {
