@@ -61,7 +61,7 @@ function playNyan() {
 
 function stopNyan() {
 	// Se l'audio era acceso lo lascia tale
-	nyan.volume = 0.0;
+	nyanAudio.nyan.volume = 0.0;
 }
 
 
