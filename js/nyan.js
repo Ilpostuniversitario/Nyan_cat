@@ -50,7 +50,7 @@ var nyanAudio = {
 
 function playNyan() {
 	// in realtà in pratica riavvia l'audio e rimette il listener
-	console.log('PlayNyan!');
+	console.log('playNyan!');
 	if (nyanAudio.isPlaying) {
 		return;
 	}
@@ -66,7 +66,7 @@ function playNyan() {
 
 function stopNyan() {
 	// Se l'audio era acceso lo lascia tale
-	console.log('StopNyan!');
+	console.log('stopNyan!');
 	nyanAudio.isPlaying = false;
 
 	nyanAudio.nyan.volume = 0.0;
