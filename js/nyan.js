@@ -66,6 +66,7 @@ $(function() {
 	}, 70);
 
 	if (oneTimeNyanPlay == 1) {
+		console.log('Myan!');
 		oneTimeNyanPlay++;
 		foreverPlayNyan();
 	}
