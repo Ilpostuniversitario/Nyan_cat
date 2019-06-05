@@ -45,6 +45,7 @@ var Sparks = function () {
 
 var nyanAudio = {
 	nyan: new Audio('audio/nyan-cat.ogg'),
+	isPlaying = false	
 }
 
 function playNyan() {
@@ -58,11 +59,13 @@ function playNyan() {
 	}, false);
 	nyanAudio.nyan.play();
 	nyanAudio.nyan.volume = 1.0;
+	nyanAudio.isPlaying = true;
 }
 
 function stopNyan() {
 	// Se l'audio era acceso lo lascia tale
 	console.log('StopNyan!');
+	nyanAudio.isPlaying = false;
 
 	nyanAudio.nyan.volume = 0.0;
 }
@@ -72,7 +75,7 @@ function musicControls() {
 
 	var audioOnRadio = document.getElementById('RadioAudioOn');
 	var audioOffRadio = document.getElementById('RadioAudioOff');
-	if (audioOnRadio.checked) {
+	if (audioOnRadio.checked && !nyanAudio.isPlaying) {
 		playNyan();
 	} else {
 		stopNyan();
