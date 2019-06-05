@@ -72,19 +72,6 @@ function stopNyan() {
 	nyanAudio.nyan.volume = 0.0;
 }
 
-
-function musicControls() {
-
-	var audioOnRadio = document.getElementById('RadioAudioOn');
-	var audioOffRadio = document.getElementById('RadioAudioOff');
-	if (audioOnRadio.checked) {
-		playNyan();
-	} else {
-		stopNyan();
-	}
-	
-}
-
 $(function () {
 	var nyancat = new NyanCat(),
 		sparks = new Sparks();
