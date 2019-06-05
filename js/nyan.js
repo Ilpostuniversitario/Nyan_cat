@@ -77,6 +77,7 @@ function musicControls() {
 	var audioOffRadio = document.getElementById('RadioAudioOff');
 	if (audioOnRadio.checked && !nyanAudio.isPlaying) {
 		playNyan();
+		audioOffRadio.checked = false;
 	} else {
 		stopNyan();
 	}
